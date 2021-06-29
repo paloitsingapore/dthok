@@ -1,0 +1,26 @@
+[
+	{
+	  "EmployeeID" 		: "code||PALO-%%-##LTD!@",
+	  "Salutation"	   	: "alphabet||title",
+	  "Firstname"  		: "alphabet|20|firstName",
+	  "Lastname"   		: "alphabet|20|lastName",
+	  "DOB"		   		: "date_of_birth|MinAge=30,MaxAge=40|%m-%d-%Y",
+	  "Gender"	   		: "choices|('Male', 'Female')|",
+	  "Mobile"     		: "PhoneNumber||India",
+	  "emailId"	   		: "alphanum||email",
+	  "Address"    		:
+	  {
+	  	"AddressType"	: "choices|('RES', 'OFF', 'WRK')|",
+	    "Street-1"      : "alphabet|20|streetName",
+	    "Street-2"      : "alphanum|20|streetName",
+	    "Postalcode"  	: "numeric|6|postcode",
+	    "country"		: "alphabet||country",
+	    "city"			: "alphabet||city"
+	  },
+	  "DOJ"		  		: "date|StartDate=20100223,EndDate=20200330|%Y-%m-%d",
+	  "Client"	  		: "alphabet||company",
+	  "Active"			: "boolean||",
+	  "AccountNum"		: "alphanum|NONE|accountNumber",
+	  "Salary"	    	: "constant|Monthly|"
+	}
+]

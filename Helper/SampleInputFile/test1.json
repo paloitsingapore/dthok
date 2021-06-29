@@ -1,0 +1,13 @@
+
+{
+  "ProductName" : "alphanum|30",
+  "ProductKey"  : "alphabet|30",
+  "Price"       :
+  {
+  	
+    "Test-1"      : "alphabet|20",
+    "Test-2"      : "alphanum|20"
+  },
+  "Location"    : "alphabet|30",
+  "Test"    : "numeric|10"
+}
