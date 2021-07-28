@@ -363,10 +363,13 @@ Output:
 ```
 
 ## Installation
+
 - To Install required 3rd party libraries use the available file from [here](https://github.com/paloitsingapore/bulk_data_generation/blob/main/installation.sh)
 
 ## Execution
-To execute on any OS use the below command to generate required bulk Data,
+
+- To execute on any OS use the below command to generate required bulk Data,
+
 ```commandline
 python dataGene.py "<input Payload file path>" "<No. of Records>" "<Output file format (csv, json or xml)>"
 ```
