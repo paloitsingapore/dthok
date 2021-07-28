@@ -6,11 +6,10 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 # Index
 <table>
 <tr>
-  <th>Installation</th>
+  <th>Setup</th>
   <td>
-      <a href="#window">Window</a> 
-    | <a href="#linux">Linux</a>
-    | <a href="#MacOS">MacOS</a>
+      <a href="#Installation">Installation</a>
+    | <a href="#Execution">Execution</a>
   </td>
 </tr>
 <tr>
@@ -60,7 +59,7 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 ## Input Datatype
 Required input schema definition have to provided with all required Field name and required datatype in JSON format. Here is Sample input Schema definition [file](https://github.com/bpanda130/DataGenerator/tree/master/Helper/SampleInputFile),
 
-![Schema Defination Image](https://github.com/bpanda130/DataGenerator/blob/master/resources/InputSchemaDefination.JPG)
+![Schema Defination Image](https://github.com/paloitsingapore/bulk_data_generation/blob/main/resources/InputSchemaDefination.JPG)
 
 
 Below are the sample data type syntax that can be used in input file.
@@ -363,35 +362,17 @@ Output:
 "Salary": "Monthly"
 ```
 
-## Window
-For execution on Windows use the available executable file from [Windows](https://github.com/bpanda130/DataGenerator/tree/master/Helper/Windows)
-On providing required Sample Input [file](https://github.com/bpanda130/DataGenerator/tree/master/Helper/SampleInputFile) and number of records, this will generate required Output format file. 
+##Installation
+- To Install required 3rd party libraries use the available file from [here](https://github.com/paloitsingapore/bulk_data_generation/blob/main/installation.sh)
 
-![Test Image](https://github.com/bpanda130/DataGenerator/blob/master/resources/InputWindow.JPG)
-
-## Linux
-From Continuous Integration perspective I have included installation.sh in the execution flow. For some reason if any user wish to run installation manually then comment the relevant line of code.
-
-To execute on any linux server,
+##Execution
+To execute on any OS use the below command to generate required bulk Data,
 ```commandline
-python3 dataGene.py "<input Payload file path>" "<No. of Records>" "<Output file format (csv, json or xml)>"
+python dataGene.py "<input Payload file path>" "<No. of Records>" "<Output file format (csv, json or xml)>"
 ```
 For Example:
-
-### xml
 ```commandline
 python3 dataGene.py "/mnt/c/user/test.json" "1000" "xml"
 ```
 
-### json
-```commandline
-python3 dataGene.py "/mnt/c/user/test.json" "1000" "json"
-```
-
-### csv
-```commandline
-python3 dataGene.py "/mnt/c/user/test.json" "1000" "csv"
-```
-
-## MacOS
-Like Windows, for Mac systems we have created executable [application](https://github.com/bpanda130/DataGenerator/tree/master/Helper/Mac) which can be use to generate mock output file.
+- To generate required output file use this [reference](https://github.com/paloitsingapore/bulk_data_generation/tree/main/resources/Bulk_Data_Generator_Execution_Flow.mp4)
