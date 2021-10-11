@@ -1,0 +1,11 @@
+[
+  {
+    "username": "alphabet|10|firstName",
+    "firstName": "alphabet|20|firstName",
+    "lastName": "alphabet|20|lastName",
+    "email": "alphanum||email",
+    "password": "alphanum|8",
+    "phone": "PhoneNumber||India",
+    "userStatus": "constant|0|"
+  }
+]

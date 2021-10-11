@@ -1,20 +1,11 @@
 import csv
 import json
-import os
-import platform
 import time
-import tkinter
-from tkinter import font as tkFont
-from functools import partial
-from tkinter import *
-from tkinter.ttk import *
 from tkinter import filedialog
 from json2xml import json2xml
 from json2xml.utils import readfromjson
 from utility import jsonGenerator, datagenerator
 import concurrent.futures
-import multiprocessing
-import threading
 
 
 def open_file():
@@ -23,7 +14,7 @@ def open_file():
     if file_path is not None:
         pass
     payload_file = file_path
-    pl_text.insert(END, file_path)
+    #pl_text.insert(END, file_path)
 
 
 def buildXML(noOfRecords, file_name, payload_file):
@@ -42,7 +33,7 @@ def append_to_file(noOfRecords, file_name, payload_file):
     start = time.perf_counter()
     record = int(noOfRecords)
     header = False
-    with open(file_name+".csv", 'w', newline='') as file:
+    with open(file_name+".csv", 'w') as file:
         csv_file = csv.writer(file, delimiter=',')
         rows, columns = datagenerator(payload_file, record)
         for row in rows:
@@ -61,7 +52,7 @@ def buildJSON(noOfRecords, file_name, payload_file):
         json_data = json.load(j)
     arr = []
     with concurrent.futures.ProcessPoolExecutor() as executor:
-        results = [executor.submit(jsonGenerator, json_data, {'Id': i + 1}) for i in range(record)]
+        results = [executor.submit(jsonGenerator, json_data, {'id': i + 1}) for i in range(record)]
         for f in concurrent.futures.as_completed(results):
             arr.append(f.result())
 
