@@ -25,3 +25,4 @@ if __name__ == '__main__':
     elif(output_fileformat == 'xml'):
         buildXML(num_records, fileName, input_file)
         print("Required output file " + fileName + ".xml generated.")
+        
