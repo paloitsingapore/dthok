@@ -6,7 +6,7 @@ with open('README.md') as readme_file:
     readme = readme_file.read()
 
 requirements = ['Faker==8.8.2',
-                'Pillow==8.2.0',
+                'Pillow==8.3.2',
                 'dict2xml==1.7.0',
                 'json2xml==3.6.0',
                 'xmltodict==0.11.0']
