@@ -50,7 +50,7 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 
 # Features
 
-* Generate random records in required format like , xml and csv.
+* Generate random records in required format like json, xml and csv.
 * Cross-platform application on Windows, Linux and macOS.
 * Use as a stand-alone executable application in Windows and macOS without any installation.
 * Configure required DataType for record values.

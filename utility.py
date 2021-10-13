@@ -6,7 +6,6 @@ from string import *
 import random
 from faker import Faker
 from datetime import datetime
-from randominfo import Person
 from phone_gen import PhoneNumber
 
 def flattenjson(b):
