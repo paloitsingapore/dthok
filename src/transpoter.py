@@ -1,20 +1,10 @@
 import csv
 import json
 import time
-from tkinter import filedialog
 from json2xml import json2xml
 from json2xml.utils import readfromjson
-from utility import jsonGenerator, datagenerator
+from src.utility import jsonGenerator, datagenerator
 import concurrent.futures
-
-
-def open_file():
-    global payload_file
-    file_path = filedialog.askopenfilename(filetypes=[('JSON Files', '*json')])
-    if file_path is not None:
-        pass
-    payload_file = file_path
-    #pl_text.insert(END, file_path)
 
 
 def buildXML(noOfRecords, file_name, payload_file):
