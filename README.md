@@ -1,7 +1,5 @@
 # Introduction
-PSTD BulkData Generator is a open-source  standalone tool to generate mock Test data in form of csv,  and xml format which can be used for any Mock Service, Performance Testing etc. It required input parameter as  schema file where required structure is defined with data type, number of records and required format.
-
-It's a cross-platform stand-alone executable tool can be used in Windows, Linux and Mac operating system.
+D-Thok is a python package to generate mock Test data in csv, json and xml format which can be used for any Mock Service, Performance Testing etc. It required input parameter as schema file where required structure is defined with data type, number of records, required format and file name.
 
 # Index
 <table>
@@ -48,14 +46,6 @@ It's a cross-platform stand-alone executable tool can be used in Windows, Linux 
 </tr>
 </table>
 
-# Features
-
-* Generate random records in required format like json, xml and csv.
-* Cross-platform application on Windows, Linux and macOS.
-* Use as a stand-alone executable application in Windows and macOS without any installation.
-* Configure required DataType for record values.
-* Generate randomised Nested  payload
-
 ## Input Datatype
 Required input schema definition have to provided with all required Field name and required datatype in JSON format. Here is Sample input Schema definition [file](https://github.com/paloitsingapore/dthok/tree/main/Helper/SampleInputFile),
 
@@ -66,24 +56,26 @@ Required input schema definition have to provided with all required Field name a
 	  "Salutation"	   	: "alphabet||title",
 	  "Firstname"  		: "alphabet|20|firstName",
 	  "Lastname"   		: "alphabet|20|lastName",
-	  "DOB"		   		: "date_of_birth|MinAge=30,MaxAge=40|%m-%d-%Y",
-	  "Gender"	   		: "choices|('Male', 'Female')|",
+	  "DOB"		   	: "date_of_birth|MinAge=30,MaxAge=40|%m-%d-%Y",
+	  "Gender"	   	: "choices|('Male', 'Female')|",
 	  "Mobile"     		: "PhoneNumber||India",
-	  "emailId"	   		: "alphanum||email",
+	  "emailId"	   	: "alphanum||email",
 	  "Address"    		:
 	  {
-	  	"AddressType"	: "choices|('RES', 'OFF', 'WRK')|",
+        
+            "AddressType"   : "choices|('RES', 'OFF', 'WRK')|",
 	    "Street-1"      : "alphabet|20|streetName",
 	    "Street-2"      : "alphanum|20|streetName",
-	    "Postalcode"  	: "numeric|6|postcode",
-	    "country"		: "alphabet||country",
-	    "city"			: "alphabet||city"
+	    "Postalcode"    : "numeric|6|postcode",
+	    "country"	    : "alphabet||country",
+	    "city"	    : "alphabet||city"
 	  },
-	  "DOJ"		  		: "date|StartDate=20100223,EndDate=20200330|%Y-%m-%d",
-	  "Client"	  		: "alphabet||company",
-	  "Active"			: "boolean||",
+	  "DOJ"		  	: "date|StartDate=20100223,EndDate=20200330|%Y-%m-%d",
+	  "Client"	  	: "alphabet||company",
+	  "Active"		: "boolean||",
 	  "AccountNum"		: "alphanum|NONE|accountNumber",
-	  "Salary"	    	: "constant|Monthly|"
+	  "Salary"	    	: "constant|Monthly|",
+          "DeskNumber"	    	: "constant|null|"
 	}
 ]
 ```
@@ -397,14 +389,16 @@ Run the following to install:
 pip install dthok
 ```
 
+Note: Python version should be >=3.6
+
 ## Execution
 
-- To execute on any OS use the below command to generate required bulk Data,
+- Command structure to generate required bulk file,
 
 ```commandline
 dthok -f <input Payload file path> -n <No. of Records> -fmt <Output file format (csv, json or xml)> -o <Output file name>
 ```
 For Example:
 ```commandline
-dthok -f  /Users/bishnuprasadpanda/Documents/PaloUtility/UtilityTools/dthok/Helper/SampleInputFile/test1.json -n  10 -fmt  json -o MyTestData
+dthok -f  /test1.json -n  10 -fmt  json -o MyTestData
 ```

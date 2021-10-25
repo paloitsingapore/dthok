@@ -18,7 +18,7 @@ setup(
     description="Bulk Test Data Generator",
     author="Palo IT Singapore",
     author_email='SG-PyPi-Group@sg.palo-it.com',
-    url='https://github.com/paloitsingapore/D-thok',
+    url='https://github.com/paloitsingapore/dthok',
     install_requires=requirements,
 
     packages=find_packages(),
@@ -35,7 +35,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'dthok=dthok.cli:main',
+            'dthok=src.cli:main',
         ],
     },
     license="MIT license",

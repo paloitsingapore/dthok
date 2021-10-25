@@ -1,11 +1,10 @@
 import csv
 import json
 import time
+import concurrent.futures
 from json2xml import json2xml
 from json2xml.utils import readfromjson
 from src.utility import jsonGenerator, datagenerator
-import concurrent.futures
-
 
 def buildXML(noOfRecords, file_name, payload_file):
     start = time.perf_counter()

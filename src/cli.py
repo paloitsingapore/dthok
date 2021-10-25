@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-from dthok.dataGene import dataGene
+from src.dataGene import dataGene
 
 def main():
     parser = argparse.ArgumentParser()

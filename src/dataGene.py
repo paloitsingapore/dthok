@@ -1,10 +1,6 @@
-import sys
 import platform
-import os
-import time
 
 from src.transpoter import buildJSON, append_to_file, buildXML
-
 
 def dataGene(input_file, num_records, output_fileformat, fileName):
     fileName = fileName + '_dthok'
