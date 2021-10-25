@@ -1,24 +1,29 @@
 """The setup script."""
+from setuptools import find_packages
+from setuptools import setup
 
-from setuptools import setup, find_packages
+with open("README.md", "r") as readme_file:
+    long_description = readme_file.read()
 
-with open('README.md') as readme_file:
-    readme = readme_file.read()
-
-requirements = ['Faker==8.8.2',
-                'Pillow==8.3.2',
-                'dict2xml==1.7.0',
-                'json2xml==3.6.0',
-                'xmltodict==0.11.0']
-
-test_requirements = [ ]
+requirements = ['Faker',
+                'randominfo',
+                'dict2xml',
+                'json2xml',
+                'xmltodict',
+                'phone-gen']
 
 setup(
-    author="Bishnu Prasad Panda",
-    author_email='bppanda@sg.palo-it.com',
+    name='dthok',
+    version='1.0.0',
+    description="Bulk Test Data Generator",
+    author="Palo IT Singapore",
+    author_email='SG-PyPi-Group@sg.palo-it.com',
+    url='https://github.com/paloitsingapore/dthok',
+    install_requires=requirements,
+
+    packages=find_packages(),
     python_requires='>=3.6',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
@@ -27,25 +32,16 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description="Bulk Test Data Generation",
+
     entry_points={
         'console_scripts': [
-            'raftnode=raftnode.cli:main',
+            'dthok=src.cli:main',
         ],
     },
-    install_requires=requirements,
-    extras_require={
-        'rocksdb': ['rocksdb==0.7.0'],
-    },
     license="MIT license",
-    #long_description=readme + '\n\n' + history,
     include_package_data=True,
-    keywords='raftnode',
-    name='raftnode',
-    packages=find_packages(include=['raftnode', 'raftnode.*']),
-    test_suite='tests',
-    tests_require=test_requirements,
-    url='https://github.com/paloitsingapore/D-thok',
-    version='0.1.1',
+    keywords='dthok',
     zip_safe=False,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
 )
